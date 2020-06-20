@@ -22,7 +22,7 @@ $result = $stmt->fetch();
 
   if($enteredPassword == $result['password']){
     //naviagte to dashboard
-    header("Location: loginSuccess.html");
+    header("Location: dashboard.php");
   } else {
     header("Location: index.html");
   }
