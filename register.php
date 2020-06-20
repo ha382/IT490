@@ -19,7 +19,7 @@ $result = $stmt->fetch();
 
   
   
-  $insert_query = "INSERT INTO testtable (username, password) VALUES ('$enteredUsername', '$enteredPassword')";
+  $insert_query = "INSERT INTO testtable (username, password) VALUES ('$enteredEmail', '$enteredPassword')";
   $stmt = $db->prepare($insert_query);
   $r = $stmt->execute();
   
