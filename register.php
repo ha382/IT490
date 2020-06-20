@@ -18,8 +18,8 @@ $result = $stmt->fetch();
   $enteredPassword = $_POST['Rpassword'];
 
   
-  
-  $insert_query = "INSERT INTO testtable (username, password) VALUES ('$enteredEmail', '$enteredPassword')";
+  INSERT INTO `ha382`.`testtable` (`email`, `password`) VALUES ('pelo@lol', 'oop');
+  $insert_query = "INSERT INTO `ha382`.`testtable` (`email`, `password`) VALUES ('$enteredEmail', '$enteredPassword');";
   $stmt = $db->prepare($insert_query);
   $r = $stmt->execute();
   
