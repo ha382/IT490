@@ -9,7 +9,7 @@ $result = $stmt->fetch();
   $Remail = $_POST['Remail'];
   $Rpassword = $_POST['Rpassword'];
 
- $insert_query = "INSERT INTO TestUsers (id, email, password) VALUES (NULL, '$Remail', '$Rpassword');";
+ $insert_query = "INSERT INTO testtable (id, email, password) VALUES (NULL, '$Remail', '$Rpassword');";
   $stmt = $db->prepare($insert_query);
   $r = $stmt->execute();
   
