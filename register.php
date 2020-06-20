@@ -1,8 +1,25 @@
 <?php
+$host="sql2.njit.edu";
+$database="ha382";
+$username="ha382";
+$password="Ywcc!1xcvb";
 
-require('config.php');
-$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
-$db = new PDO($conn_string, $username, $password);
+try {
+  $conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+// Create connection
+$conn = new mysqli($host, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 
 /*
 $stmt = $db->query("SELECT * from testtable");
