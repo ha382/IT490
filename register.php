@@ -1,5 +1,11 @@
 <?php
-require('config.php');
+
+
+$host="sql2.njit.edu";
+$database="ha382";
+$username="ha382";
+$password="Ywcc!1xcvb";
+
 $conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
 $db = new PDO($conn_string, $username, $password);
 
