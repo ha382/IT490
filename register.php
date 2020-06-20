@@ -1,55 +1,21 @@
 <?php
-$host="sql2.njit.edu";
-$database="ha382";
-$username="ha382";
-$password="Ywcc!1xcvb";
-
-try {
-  $conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-}
-// Create connection
-$conn = new mysqli($host, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-$sql = "INSERT INTO `ha382`.`testtable` (`id`, `email`, `password`) VALUES (NULL, '$_POST["enteredEmail"]', '$_POST["enteredPassword"]');";
-//$sql = "INSERT INTO tutorials_inf(name)VALUES ('".$_POST["name"]."')";
-
-if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "" . mysqli_error($conn);
-}
-$conn->close();
+require('config.php');
+$conn_string = "mysql:host=$host;dbname=$database;charset=utf8mb4";
+$db = new PDO($conn_string, $username, $password);
 
 
-/*
 $stmt = $db->query("SELECT * from testtable");
 $result = $stmt->fetch();
 
+
   $enteredEmail = $_POST['Remail'];
   $enteredPassword = $_POST['Rpassword'];
+
   
-  $insert_query = "INSERT INTO `ha382`.`testtable` (`id`, `email`, `password`) VALUES (NULL, '$enteredEmail', '$enteredPassword');";
+  
+  $insert_query = "INSERT INTO testtable (username, password) VALUES ('$enteredUsername', '$enteredPassword')";
   $stmt = $db->prepare($insert_query);
   $r = $stmt->execute();
-  */
-  //SOMEHOW PERSIST LOGIN VALUES INTO DASHBOARD
-
-
-
-
-  header("Location: registerSuccess.html");
   
-
-
-
+  header("Location: registerSuccess.html");
 ?>
