@@ -20,6 +20,16 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
+$sql = "INSERT INTO `ha382`.`testtable` (`id`, `email`, `password`) VALUES (NULL, '$_POST["enteredEmail"]', '$_POST["enteredPassword"]');";
+//$sql = "INSERT INTO tutorials_inf(name)VALUES ('".$_POST["name"]."')";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "" . mysqli_error($conn);
+}
+$conn->close();
+
 
 /*
 $stmt = $db->query("SELECT * from testtable");
@@ -33,6 +43,10 @@ $result = $stmt->fetch();
   $r = $stmt->execute();
   */
   //SOMEHOW PERSIST LOGIN VALUES INTO DASHBOARD
+
+
+
+
   header("Location: registerSuccess.html");
   
 
