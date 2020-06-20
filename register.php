@@ -6,14 +6,17 @@ $db = new PDO($conn_string, $username, $password);
 $stmt = $db->query("SELECT * from testtable");
 $result = $stmt->fetch();
 
-  $Remail = $_POST['Remail'];
-  $Rpassword = $_POST['Rpassword'];
-
- $insert_query = "INSERT INTO testtable (id, email, password) VALUES (NULL, '$Remail', '$Rpassword');";
+  $enteredEmail = $_POST['Remail'];
+  $enteredPassword = $_POST['Rpassword'];
+  
+  $insert_query = "INSERT INTO `ha382`.`testtable` (`id`, `email`, `password`) VALUES (NULL, '$enteredEmail', '$enteredPassword');";
   $stmt = $db->prepare($insert_query);
   $r = $stmt->execute();
   
   //SOMEHOW PERSIST LOGIN VALUES INTO DASHBOARD
   header("Location: registerSuccess.html");
+  
+
+
 
 ?>
