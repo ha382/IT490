@@ -20,7 +20,12 @@ $result = $stmt->fetch();
   $stmt = $db->query("SELECT * FROM testtable WHERE email = '$enteredEmail'");
   $result = $stmt->fetch();
 
-  if($enteredPassword == $result['password'])
+  if($enteredPassword == $result['password']){
+    //naviagte to dashboard
+    header("Location: loginSuccess.html");
+  } else {
+    header("Location: index.html");
+  }
 
 
   /*
@@ -29,5 +34,4 @@ $result = $stmt->fetch();
   $r = $stmt->execute();
   */
 
-  header("Location: loginSuccess.html");
 ?>
