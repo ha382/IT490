@@ -37,7 +37,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="dashboard.php">Home</a></li>
 							<li><a href="generic.html">Tab 1</a></li>
 							<li><a href="elements.html">Tab 2</a></li>
 						</ul>
