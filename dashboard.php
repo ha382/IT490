@@ -23,7 +23,7 @@
 					<div id="intro">
 						<h1>IT 490<br />
 						Milestone 2</h1>
-						<p>A login, registration, and dashboard page</p>
+						<p>A dashboard.</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
@@ -38,8 +38,8 @@
 					<nav id="nav">
 						<ul class="links">
 							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="generic.html">Generic Page</a></li>
-							<li><a href="elements.html">Elements Reference</a></li>
+							<li><a href="generic.html">Tab 1</a></li>
+							<li><a href="elements.html">Tab 2</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
